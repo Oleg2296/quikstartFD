@@ -1,0 +1,38 @@
+
+<div class="orders_admin">
+<h1>Замовлення</h1>
+<table border="1">
+    <tr>
+        <th>N замовлення</th>
+        <th>Перша страва</th>
+        <th>Друга страва</th>
+        <th>Напої</th>
+        <th>В Архів</th>
+    </tr>
+    <tr *ngFor="let dish of orders;">
+        <th>{{dish.orderId}}</th>
+        <th>{{dish.orderFood}}</th>
+        <th>{{dish.orderFood2}}</th>
+        <th>{{dish.drink}}</th>
+        <th><input type="button" value="в архів" (click)="archOrd(dish)"></th>
+        <th><input type="button" value="відмінити" (click)="delete(dish)"></th>
+        <th><input type="button" value="змінити" (click)="change(dish)"></th>
+    </tr>
+</table>
+<br><br><br>
+<h2>Архів замовлень</h2>
+<table border="1">
+    <tr>
+        <th>N замовлення</th>
+        <th>Перша страва</th>
+        <th>Друга страва</th>
+        <th>Напої</th>
+    </tr>
+    <tr *ngFor="let dish of archOrds; let i = index">
+        <th>{{dish.orderId}}</th>
+        <th>{{dish.orderFood}}</th>
+        <th>{{dish.orderFood2}}</th>
+        <th>{{dish.drink}}</th>
+    </tr>
+</table>
+</div>

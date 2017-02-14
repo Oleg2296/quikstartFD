@@ -1,0 +1,19 @@
+
+<div class="wrong_pass" *ngIf="wrongPass">
+    <h2>Incorrect password</h2>
+</div>
+
+
+
+
+<div id="login">
+    <form name='form-login'>
+        <span class="fontawesome-user"></span>
+        <input type="text" id="user" placeholder="Username" #login>
+
+        <span class="fontawesome-lock"></span>
+        <input type="password" id="pass" placeholder="Password" #password>
+
+        <input type="button" value="Login" (click)="loginAdmin(login.value,password.value)">
+    </form>
+</div>

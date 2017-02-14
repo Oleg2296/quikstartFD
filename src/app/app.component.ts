@@ -1,7 +1,15 @@
 import { Component } from '@angular/core';
 
+import { UserService } from './service/user.service';
+import { HttpClient } from './service/http.service';
+
 @Component({
-  selector: 'my-app',
-  template: `<h1>Hello {{name}}</h1>`,
+    selector: 'my-app',
+    providers: [ UserService, HttpClient],
+    templateUrl: "../templetes/myApp.html"
 })
-export class AppComponent  { name = 'Angular'; }
+
+export class AppComponent{
+    constructor(private userService: UserService){}
+}
+
